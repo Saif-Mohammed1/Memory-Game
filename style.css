@@ -165,4 +165,10 @@ footer span {
     padding: 12px;
     font-size: 14px;
   }
+  header,
+  .container,
+  footer {
+    width: 100%;
+    margin: 0;
+  }
 }
