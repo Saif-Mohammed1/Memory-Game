@@ -66,7 +66,7 @@ footer {
 .container {
   display: flex;
   flex-wrap: wrap;
-  /* perspective: 500px; */
+  perspective: 500px;
 }
 .container.no-clicking {
   pointer-events: none;

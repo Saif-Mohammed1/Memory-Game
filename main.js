@@ -38,7 +38,7 @@ document.querySelector(".control-button span").addEventListener("click", () => {
       document.querySelectorAll(".game-block").forEach((block) => {
         block.classList.remove("is-flipped");
       });
-    }, 4000);
+    }, duration);
     window.sessionStorage.setItem("Name", Name);
   }
 });
@@ -112,9 +112,9 @@ function CheckMatchedBlocks(FirstBlock, SecondBlock) {
     SecondBlock.classList.add("has-matched");
 
     document.querySelector("#success").play();
-    document.querySelector(".game-block").classList.add("no-clicking");
+    document.querySelector(".container").classList.add("no-clicking");
     setTimeout(() => {
-      document.querySelector(".game-block").classList.remove("no-clicking");
+      document.querySelector(".container").classList.remove("no-clicking");
     }, 3000);
     let ALLMatched = ContainerBlocks.filter((flippedMatched) =>
       flippedMatched.classList.contains("has-matched")
@@ -128,20 +128,14 @@ function CheckMatchedBlocks(FirstBlock, SecondBlock) {
 
       document.getElementById("winner").play();
       but.style.cssText = `display: block;`;
-      but.classList.add("no-clicking");
-      setTimeout(() => {
-        but.classList.remove("no-clicking");
-      }, 3000);
     }
   } else {
     tries.innerHTML++;
     document.querySelector("#fail").play();
-    document.querySelector(".game-block").classList.add("no-clicking");
     setTimeout(() => {
       FirstBlock.classList.remove("is-flipped");
       SecondBlock.classList.remove("is-flipped");
-      document.querySelector(".game-block").classList.remove("no-clicking");
-    }, 4000);
+    }, duration);
   }
 }
 
@@ -155,7 +149,7 @@ function Reload() {
     block.classList.add("is-flipped");
     setTimeout(() => {
       block.classList.remove("is-flipped");
-    }, 4000);
+    }, duration);
   });
   GetRandomNum(RandomNumber);
   ContainerBlocks.forEach((Block, Index) => {
