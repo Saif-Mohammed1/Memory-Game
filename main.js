@@ -46,7 +46,7 @@ document.querySelector(".control-button span").addEventListener("click", () => {
 let mainContainer = document.querySelector(".container"),
   ContainerBlocks = Array.from(mainContainer.children),
   RandomNumber = Array.from(Array(ContainerBlocks.length).keys()),
-  duration = 2000;
+  duration = 3000;
 GetRandomNum(RandomNumber);
 
 ContainerBlocks.forEach((Block, Index) => {
@@ -115,7 +115,7 @@ function CheckMatchedBlocks(FirstBlock, SecondBlock) {
     document.querySelector(".container").classList.add("no-clicking");
     setTimeout(() => {
       document.querySelector(".container").classList.remove("no-clicking");
-    }, 3000);
+    }, 3500);
     let ALLMatched = ContainerBlocks.filter((flippedMatched) =>
       flippedMatched.classList.contains("has-matched")
     );
