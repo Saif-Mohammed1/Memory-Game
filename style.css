@@ -7,20 +7,17 @@ body {
   font-family: "Courier New", Courier, monospace;
   background-color: #eee;
 }
-
 .control-button {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #039ae598;
+  background-color: #f0f8ffcc;
   z-index: 2;
 }
 .control-button span {
   position: absolute;
-  text-align: center;
-  padding: 10px 20px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -28,99 +25,101 @@ body {
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
-  background-color: red;
-  font-size: 30px;
-  color: #fff;
+  background: aquamarine;
+  padding: 20px;
+  color: white;
   cursor: pointer;
+  font-size: 20px;
+  font-weight: bolder;
 }
-
+button {
+  position: absolute;
+  top: 63%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  background: aquamarine;
+  padding: 20px;
+  color: white;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bolder;
+  border: none;
+  display: none;
+}
 header {
-  margin: 10px auto;
-  background-color: white;
-  border: 2px solid #039be5;
-  overflow: hidden;
-  padding: 10px;
-}
-/* header div {
-  font-size: 18px;
-  font-weight: bold; 
-  width: 45%;
-  display: inline-block;
-  padding: 10px;
-} */
-header .name {
-  float: left;
-  width: 50%;
-}
-header .scroll {
-  float: right;
-  width: 50%;
-  text-align: right;
-}
-.container,
-header {
-  width: 70%;
-}
-
-.container {
-  margin: 20px auto;
   display: flex;
-  /* width: 600px; 1100px */
+  justify-content: space-between;
+  padding: 10px;
+  background-color: white;
+  border: 2px solid #03a9f4;
+}
+header,
+.container,
+footer {
+  width: 70%;
+  margin: 0 auto;
+}
+.container {
+  display: flex;
   flex-wrap: wrap;
+  /* perspective: 500px; */
 }
 .container.no-clicking {
   pointer-events: none;
 }
+.no-clicking {
+  pointer-events: none;
+}
 .container .game-block {
-  /*width: calc(93% / 5);
-  */
-  height: 100px;
-  /*200px*/
+  width: 110px;
+  height: 110px;
+  margin: 10px 6px 6px 0;
+  transform-style: preserve-3d;
+  position: relative;
+  border: 2px solid #03a9f4;
   transition: transform 0.5s;
   -webkit-transition: transform 0.5s;
   -moz-transition: transform 0.5s;
   -ms-transition: transform 0.5s;
   -o-transition: transform 0.5s;
-  transform-style: preserve-3d;
   cursor: pointer;
-  position: relative;
   flex: 1 0 100px;
-  /*flex: 1 0 200px;
-  */
-  margin: 0 6px 6px;
 }
+
 .container .game-block .front {
   background-color: #333;
   line-height: 100px;
 }
 .container .game-block .front::before {
   content: "!";
-  font-size: 80px;
-  font-weight: bold;
+  text-align: center;
+  font-size: 100px;
   color: white;
 }
-
 .container .game-block .back {
-  background-color: #607d8b;
+  background-color: rgb(105, 105, 105);
   transform: rotateY(180deg);
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
   -ms-transform: rotateY(180deg);
   -o-transform: rotateY(180deg);
 }
-
 .container .game-block .back img {
   width: 100px;
   height: 100px;
+  margin-top: 3px;
 }
-
 .container .game-block .face {
-  position: absolute;
   width: 100%;
   height: 100%;
   text-align: center;
   backface-visibility: hidden;
-  border: 2px solid #039be5;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
 }
 .container .game-block.is-flipped,
 .container .game-block.has-matched {
@@ -131,23 +130,12 @@ header {
   -o-transform: rotateY(180deg);
   pointer-events: none;
 }
-
 footer {
-  background-color: #000;
-  color: #eee;
-  /* bottom: 0px; */
-  padding: 10px;
-  position: relative;
-  width: 70%;
-  margin: 0 auto;
+  background-color: white;
+  padding: 9px 0;
+  border: 2px solid #03a9f4;
   text-align: center;
 }
-footer .fa-heart {
-  color: red;
-}
-footer .fa-heart:before {
-  content: "\f004";
-}
 footer span {
-  color: #039be5;
+  color: #03a9f4;
 }
